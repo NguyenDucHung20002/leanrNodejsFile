@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Register route
 app.post("/register", (req, res) => {
   const { email } = req.body;
+  console.log("email:", email);
   const verificationCode = generateVerificationCode(); // Generate a verification code
   // saveVerificationCode(email, verificationCode); // Save the code in the database (e.g., using MongoDB)
 
@@ -54,8 +55,8 @@ function sendVerificationEmail(email, code) {
     // SMTPJS configuration
     const config = {
       host: "smtp.elasticemail.com",
-      username: "sieuxau50@gmail.com",
-      password: "1AD5677B40115C2AEC7BA2CF9CCF2F8E8FFF",
+      username: "taoxinma01@gmail.com",
+      password: "5759A43F7825FDC714754B2452465114EE0F",
       fromEmail: "taoxinma01@gmail.com",
       fromName: "Hung Pro",
       toEmail: email,
@@ -66,7 +67,7 @@ function sendVerificationEmail(email, code) {
     // Send email using SMTPJS
     Email.send({
       ...config,
-      SecureToken: "14859678-883b-4dea-b434-cd19e0e56f20", // Secure token generated from SMTPJS.com
+      SecureToken: "34cf41df-d7e0-476e-ac1b-a0247aeee1b2", // Secure token generated from SMTPJS.com
       onSuccess: resolve,
       onError: reject,
     });

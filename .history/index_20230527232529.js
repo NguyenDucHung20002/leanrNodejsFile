@@ -54,8 +54,8 @@ function sendVerificationEmail(email, code) {
     // SMTPJS configuration
     const config = {
       host: "smtp.elasticemail.com",
-      username: "sieuxau50@gmail.com",
-      password: "1AD5677B40115C2AEC7BA2CF9CCF2F8E8FFF",
+      username: "taoxinma01@gmail.com",
+      password: "5759A43F7825FDC714754B2452465114EE0F",
       fromEmail: "taoxinma01@gmail.com",
       fromName: "Hung Pro",
       toEmail: email,

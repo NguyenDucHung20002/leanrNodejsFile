@@ -28,7 +28,7 @@ app.post("/register", (req, res) => {
 // Verify route
 app.get("/verify", (req, res) => {
   const { email, code } = req.query;
-  const storedCode = getVerificationCode(email); // Retrieve the code from the database
+  // const storedCode = getVerificationCode(email); // Retrieve the code from the database
 
   if (storedCode === code) {
     markEmailAsVerified(email); // Update the user's email as verified in the database
@@ -54,8 +54,8 @@ function sendVerificationEmail(email, code) {
     // SMTPJS configuration
     const config = {
       host: "smtp.elasticemail.com",
-      username: "sieuxau50@gmail.com",
-      password: "1AD5677B40115C2AEC7BA2CF9CCF2F8E8FFF",
+      username: "taoxinma01@gmail.com",
+      password: "5759A43F7825FDC714754B2452465114EE0F",
       fromEmail: "taoxinma01@gmail.com",
       fromName: "Hung Pro",
       toEmail: email,
@@ -66,7 +66,8 @@ function sendVerificationEmail(email, code) {
     // Send email using SMTPJS
     Email.send({
       ...config,
-      SecureToken: "14859678-883b-4dea-b434-cd19e0e56f20", // Secure token generated from SMTPJS.com
+      SecureToken:
+        "C627B2468C4081392E0CE24067FFADDA5726EEC1FA9BFA47AF32F7B1E6489758C379294F641425D8C139613E1AA87F5D", // Secure token generated from SMTPJS.com
       onSuccess: resolve,
       onError: reject,
     });
